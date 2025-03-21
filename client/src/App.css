@@ -1,38 +1,188 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+:root {
+    --primary-color: #4169e1;
+    --secondary-color: #3a0ca3;
+    --light-bg: #f5f6fa;
+    --text-color: #333;
+    --text-light: #666;
+    --text-lighter: #888;
+    --white: #fff;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
-  to {
-    transform: rotate(360deg);
+  
+  body {
+    font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.6;
   }
-}
+  
+  .app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 1.5rem 2rem;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+  }
+  
+  .content-container {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    width: 100%;
+  }
+  
+  .intro-section {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .intro-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+  }
+  
+  .intro-section p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: var(--text-light);
+  }
+  
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .feature-card {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .feature-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+  }
+  
+  .feature-card p {
+    color: var(--text-lighter);
+    font-size: 0.9rem;
+  }
+  
+  .mode-selection {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .mode-selection h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+  }
+  
+  .mode-buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  .mode-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 200px;
+  }
+  
+  .mode-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .text-mode {
+    border-top: 4px solid #4caf50;
+  }
+  
+  .video-mode {
+    border-top: 4px solid #2196f3;
+  }
+  
+  .button-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .button-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .footer {
+    background-color: #333;
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  @media (max-width: 768px) {
+    .mode-buttons {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .mode-button {
+      width: 100%;
+      max-width: 280px;
+    }
+    
+    .content-container {
+      padding: 1.5rem;
+    }
+  }
